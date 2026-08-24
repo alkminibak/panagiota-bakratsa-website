@@ -1,7 +1,7 @@
 function App() {
   return (
     <main>
-      <h1>Panagiota Bakratsa</h1>
+      <h1 className="text-4xl font-bold">Panagiota Bakratsa</h1>
     </main>
   );
 }
