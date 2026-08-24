@@ -4,6 +4,7 @@
   --color-*: initial;
 
   --color-brand: #1d395e;
-  --color-white: #ffffff;
-  --color-black: #000000;
+  --color-background: #ffffff;
+  --color-text: #000000;
+  --color-on-brand: #ffffff;
 }
