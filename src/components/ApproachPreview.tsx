@@ -4,7 +4,7 @@ import Container from "./Container";
 
 const ApproachPreview = () => {
   return (
-    <section className="relative bg-surface pt-0 pb-20">
+    <section className="relative bg-surface pb-10">
       <Container>
         <div className="grid grid-cols-[220px_minmax(0,1fr)] items-start gap-14">
           <div aria-hidden="true" />

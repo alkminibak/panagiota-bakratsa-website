@@ -1,5 +1,5 @@
 import biographyDetail from "../assets/biography-detail.jpg";
-import cornerContinuous from "../assets/corner-fixed-stroke.svg";
+import cornerContinuous from "../assets/corner.svg";
 import photoToApproachLine from "../assets/photo-to-approach-line.svg";
 
 export default function BiographyPreview() {
@@ -13,7 +13,7 @@ export default function BiographyPreview() {
               src={cornerContinuous}
               alt=""
               aria-hidden="true"
-              className="pointer-events-none absolute -top-10 left-1 w-40"
+              className="pointer-events-none absolute -top-12 left-1 w-40"
             />
 
             <div className="max-w-[520px] pl-16 pt-2">

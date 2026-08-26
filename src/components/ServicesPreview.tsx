@@ -1,26 +1,34 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 import Container from "./Container";
+import horizontalLoop from "../assets/horizontal-loop.svg";
 
 const services = [
-  "Ατομική Ψυχοθεραπεία",
+  "Ατομική Ψυχοθεραπεία Ενηλίκων",
+  "Ατομική Ψυχοθεραπεία Εφήβων",
   "Συμβουλευτική Γονέων",
-  "Αυτογνωσία / Προσωπική Ανάπτυξη",
 ];
 
 const ServicesPreview = () => {
   return (
-    <section className="bg-background py-20">
+    <section className="bg-background">
       <Container>
-        <div className="flex items-center gap-8">
-          <h2 className="shrink-0 text-3xl font-semibold text-brand">
+        {/* Section title */}
+        <div className="mb-8 flex items-center gap-6 pl-16">
+          <h2 className="shrink-0 text-4xl font-medium text-brand">
             Υπηρεσίες
           </h2>
 
-          <div aria-hidden="true" className="h-[2px] flex-1 bg-brand" />
+          <img
+            src={horizontalLoop}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none w-[600px]"
+          />
         </div>
 
-        <div className="mt-10 bg-brand/8 px-10 py-10">
+        {/* Services */}
+        <div className="bg-brand/8 px-10 py-10">
           <div className="grid grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div
