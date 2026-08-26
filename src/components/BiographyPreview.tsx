@@ -1,74 +1,72 @@
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router";
-import biographyImage from "../assets/biography-detail.jpg";
-import Container from "./Container";
+import biographyDetail from "../assets/biography-detail.jpg";
+import cornerContinuous from "../assets/corner-fixed-stroke.svg";
+import photoToApproachLine from "../assets/photo-to-approach-line.svg";
 
-const BiographyPreview = () => {
+export default function BiographyPreview() {
   return (
-    <section className="bg-background py-20">
-      <Container>
-        <div className="grid grid-cols-[minmax(0,1fr)_280px] items-center gap-20">
-          <div className="relative pl-8">
-            <span
+    <section className="pt-20 pb-10">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="grid grid-cols-[1.15fr_0.85fr] items-start gap-12">
+          {/* Text side */}
+          <div className="relative">
+            <img
+              src={cornerContinuous}
+              alt=""
               aria-hidden="true"
-              className="absolute left-0 top-0 h-24 w-[2px] bg-brand"
+              className="pointer-events-none absolute -top-10 left-1 w-40"
             />
 
-            <span
-              aria-hidden="true"
-              className="absolute left-0 top-0 h-[2px] w-20 bg-brand"
-            />
+            <div className="max-w-[520px] pl-16 pt-2">
+              <h2 className="mb-8 text-4xl font-medium text-brand">
+                Βιογραφικό
+              </h2>
 
-            <h2 className="pt-8 text-3xl font-semibold text-brand">
-              Βιογραφικό
-            </h2>
+              <div className="space-y-6 text-lg leading-9 text-text">
+                <p>
+                  Η Παναγιώτα Μπακρατσά ζει και εργάζεται ως ψυχολόγος στην
+                  Καβάλα. Είναι απόφοιτη του Τμήματος Ψυχολογίας του
+                  Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης. Μετά την ολοκλήρωση
+                  των σπουδών της, εμπλούτισε την επαγγελματική της κατάρτιση
+                  μέσα από πρακτική άσκηση, εργασιακή εμπειρία και συνεχή
+                  εκπαίδευση.
+                </p>
 
-            <div className="mt-6 max-w-3xl space-y-4 text-lg leading-8 text-text">
-              <p>
-                Η Παναγιώτα Μπακρατσά ζει και εργάζεται ως ψυχολόγος στην
-                Καβάλα. Είναι απόφοιτη του Τμήματος Ψυχολογίας του Αριστοτελείου
-                Πανεπιστημίου Θεσσαλονίκης. Μετά την ολοκλήρωση των σπουδών της,
-                εμπλούτισε την επαγγελματική της κατάρτιση μέσα από πρακτική
-                άσκηση, εργασιακή εμπειρία και συνεχή εκπαίδευση.
-              </p>
+                <p>
+                  Σήμερα εργάζεται ψυχοθεραπευτικά στο ιδιωτικό της γραφείο στην
+                  Καβάλα, παρέχοντας ατομική ψυχοθεραπεία σε εφήβους και
+                  ενήλικες, καθώς και συμβουλευτική γονέων, τόσο δια ζώσης όσο
+                  και διαδικτυακά. Η θεραπευτική της δουλειά βασίζεται στη
+                  Γνωσιακή Συμπεριφορική Προσέγγιση.
+                </p>
+              </div>
 
-              <p>
-                Σήμερα εργάζεται ψυχοθεραπευτικά στο ιδιωτικό της γραφείο στην
-                Καβάλα, παρέχοντας ατομική ψυχοθεραπεία σε εφήβους και ενήλικες,
-                καθώς και συμβουλευτική γονέων, τόσο δια ζώσης, όσο και
-                διαδικτυακά. Η θεραπευτική της δουλειά βασίζεται στη Γνωσιακή
-                Συμπεριφορική Προσέγγιση.
-              </p>
+              <a
+                href="/about"
+                className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-brand transition-transform duration-200 hover:translate-x-1"
+              >
+                Περισσότερα
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
-
-            <Link
-              to="/about"
-              aria-label="Περισσότερα για το βιογραφικό"
-              className="mt-7 inline-flex items-center gap-2 font-medium text-brand transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
-            >
-              Περισσότερα
-              <ArrowRight aria-hidden="true" className="h-4 w-4" />
-            </Link>
           </div>
 
-          <div className="relative">
-            <div
-              aria-hidden="true"
-              className="absolute -left-6 top-6 -bottom-6 -right-16 border-b-2 border-l-2 border-brand"
-            >
-              <span className="absolute -right-[2px] top-full h-24 w-[2px] bg-brand" />
-            </div>
+          {/* Image side */}
+          <div className="relative -translate-x-4 w-[380px]">
+            <img
+              src={biographyDetail}
+              alt="Λεπτομέρεια από τον χώρο του γραφείου"
+              className="h-auto w-full object-cover"
+            />
 
             <img
-              src={biographyImage}
-              alt="Λεπτομέρεια από το ψυχολογικό γραφείο με φυτό και επαγγελματική κάρτα"
-              className="relative aspect-[4/5] w-full object-cover"
+              src={photoToApproachLine}
+              alt=""
+              aria-hidden="true"
+              className="pointer-events-none absolute -bottom-37 -right-24 z-20 w-[520px] max-w-none"
             />
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
-};
-
-export default BiographyPreview;
+}

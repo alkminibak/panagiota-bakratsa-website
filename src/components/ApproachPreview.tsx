@@ -4,19 +4,17 @@ import Container from "./Container";
 
 const ApproachPreview = () => {
   return (
-    <section className="bg-surface py-20">
+    <section className="relative bg-surface pt-0 pb-20">
       <Container>
-        <div className="grid grid-cols-[minmax(180px,0.7fr)_minmax(0,1.6fr)] items-start gap-14">
-          <div aria-hidden="true" className="pt-5">
-            <div className="h-[2px] w-full bg-brand" />
-          </div>
+        <div className="grid grid-cols-[220px_minmax(0,1fr)] items-start gap-14">
+          <div aria-hidden="true" />
 
-          <div className="relative max-w-3xl">
-            <h2 className="text-3xl font-semibold text-brand">
+          <div className="max-w-4xl">
+            <h2 className="mb-8 text-4xl font-medium text-brand">
               Θεραπευτική Προσέγγιση
             </h2>
 
-            <div className="mt-6 space-y-4 text-lg leading-8 text-text">
+            <div className="space-y-4 text-lg leading-8 text-text">
               <p>
                 Η Γνωσιακή Συμπεριφορική Ψυχοθεραπεία αποτελεί μια επιστημονικά
                 τεκμηριωμένη μορφή ψυχοθεραπείας. Η αποτελεσματικότητά της έχει
