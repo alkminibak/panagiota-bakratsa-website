@@ -1,12 +1,29 @@
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router";
 import Container from "./Container";
+import HandDrawnLink from "./HandDrawnLink";
 import horizontalLoop from "../assets/horizontal-loop.svg";
+import adultIcon from "../assets/adult-icon.png";
+import adolescentIcon from "../assets/adolescent-icon.png";
+import parentsIcon from "../assets/parents-icon.png";
 
 const services = [
-  "Ατομική Ψυχοθεραπεία Ενηλίκων",
-  "Ατομική Ψυχοθεραπεία Εφήβων",
-  "Συμβουλευτική Γονέων",
+  {
+    title: "Ατομική Ψυχοθεραπεία Ενηλίκων",
+    description: "Κατανόηση, αλλαγή και προσωπική ανάπτυξη",
+    icon: adultIcon,
+    iconClassName: "h-20 w-20",
+  },
+  {
+    title: "Ατομική Ψυχοθεραπεία Εφήβων",
+    description: "Υποστήριξη στις προκλήσεις της εφηβείας",
+    icon: adolescentIcon,
+    iconClassName: "h-20 w-20",
+  },
+  {
+    title: "Συμβουλευτική Γονέων",
+    description: "Σύνδεση, επικοινωνία και στήριξη",
+    icon: parentsIcon,
+    iconClassName: "h-20 w-20 scale-120 translate-y-1.5",
+  },
 ];
 
 const ServicesPreview = () => {
@@ -14,10 +31,8 @@ const ServicesPreview = () => {
     <section className="bg-background">
       <Container>
         {/* Section title */}
-        <div className="mb-8 flex items-center gap-6 pl-16">
-          <h2 className="shrink-0 text-4xl font-medium text-brand">
-            Υπηρεσίες
-          </h2>
+        <div className="mb-4 flex items-center gap-6 pl-16">
+          <h2 className="text-4xl font-medium text-brand">Υπηρεσίες</h2>
 
           <img
             src={horizontalLoop}
@@ -29,35 +44,45 @@ const ServicesPreview = () => {
 
         {/* Services */}
         <div className="bg-brand/8 px-10 py-10">
-          <div className="grid grid-cols-3 gap-8">
-            {services.map((service, index) => (
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {services.map((service) => (
               <div
-                key={service}
-                className="relative flex min-h-32 items-center px-4"
+                key={service.title}
+                className="flex min-h-[270px] flex-col items-center bg-background px-8 py-8 text-center"
               >
-                <h3 className="max-w-xs text-2xl font-medium leading-snug text-brand">
-                  {service}
-                </h3>
-
-                {index !== services.length - 1 && (
-                  <span
+                {/* Icon */}
+                <div className="mb-4 flex h-20 items-center justify-center">
+                  <img
+                    src={service.icon}
+                    alt=""
                     aria-hidden="true"
-                    className="absolute right-0 top-1/2 h-10 w-[2px] -translate-y-1/2 bg-brand/30"
+                    className={`${service.iconClassName} object-contain`}
                   />
-                )}
+                </div>
+
+                {/* Title */}
+                <div className="mb-3 flex h-16 items-center justify-center">
+                  <h3 className="max-w-xs text-2xl font-medium leading-snug text-brand">
+                    {service.title}
+                  </h3>
+                </div>
+
+                {/* Description */}
+                <p className="max-w-xs text-base leading-relaxed text-brand/80">
+                  {service.description}
+                </p>
               </div>
             ))}
           </div>
 
+          {/* Services link */}
           <div className="mt-8 flex justify-end">
-            <Link
+            <HandDrawnLink
               to="/services"
-              aria-label="Περισσότερα για τις υπηρεσίες"
-              className="inline-flex items-center gap-2 font-medium text-brand transition-transform hover:translate-x-1 hover:text-brand/80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+              ariaLabel="Περισσότερα για τις υπηρεσίες"
             >
-              Περισσότερα
-              <ArrowRight aria-hidden="true" className="h-4 w-4" />
-            </Link>
+              Δείτε περισσότερα
+            </HandDrawnLink>
           </div>
         </div>
       </Container>
