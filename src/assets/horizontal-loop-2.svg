@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 210" role="img" aria-label="Decorative curved line">
+  <path
+    d="M50 108
+       C63 108 70 107 79 108
+       C93 109 101 116 99 126
+       C97 138 86 145 76 139
+       C64 132 66 117 75 103
+       C88 82 111 72 141 72
+       C208 71 258 97 322 110
+       C399 126 486 118 558 110
+       C646 100 738 94 842 97"
+    fill="none"
+    stroke="#1D395E"
+    stroke-width="4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    vector-effect="non-scaling-stroke"
+  />
+</svg>

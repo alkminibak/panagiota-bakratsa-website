@@ -1,6 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import Container from "./Container";
+import horizontalLoop2 from "../assets/horizontal-loop-2.svg";
 
 const faqs = [
   {
@@ -45,22 +46,31 @@ const Faq = () => {
   return (
     <section className="bg-background py-20">
       <Container>
-        <div className="max-w-5xl">
-          <div className="flex items-center gap-8">
-            <h2 className="shrink-0 text-3xl font-semibold text-brand">
+        <div className="max-w-5xl pl-16">
+          {/* Section title */}
+          <div className="flex items-center gap-2">
+            <div className="relative h-16 min-w-0 flex-1">
+              <img
+                src={horizontalLoop2}
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute left-17 top-1/2 w-[calc(100%-1.5rem)] -translate-y-1/2"
+              />
+            </div>
+
+            <h2 className="shrink-0 mb-2 text-right text-4xl font-medium text-brand">
               Συχνές Ερωτήσεις
             </h2>
-
-            <div aria-hidden="true" className="h-[2px] flex-1 bg-brand" />
           </div>
 
+          {/* FAQ items */}
           <div className="mt-10">
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
               const answerId = `faq-answer-${index}`;
 
               return (
-                <div key={faq.question} className="border-b-2 border-brand">
+                <div key={faq.question} className="border-b border-brand/40">
                   <h3>
                     <button
                       type="button"
@@ -73,7 +83,7 @@ const Faq = () => {
 
                       <ChevronDown
                         aria-hidden="true"
-                        className={`h-5 w-5 shrink-0 transition-transform duration-300 motion-reduce:transition-none ${
+                        className={`h-4 w-4 shrink-0 stroke-[1.5] transition-transform duration-300 motion-reduce:transition-none ${
                           isOpen ? "rotate-180" : ""
                         }`}
                       />
@@ -86,7 +96,7 @@ const Faq = () => {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <div id={answerId} className="pb-6 pr-12">
+                      <div id={answerId} className="pb-7 pr-12">
                         <p className="max-w-4xl whitespace-pre-line leading-7 text-text">
                           {faq.answer}
                         </p>
