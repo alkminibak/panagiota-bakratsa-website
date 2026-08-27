@@ -1,6 +1,7 @@
 import biographyDetail from "../assets/biography-detail.jpg";
 import cornerContinuous from "../assets/corner.svg";
 import photoToApproachLine from "../assets/photo-to-approach-line.svg";
+import HandDrawnLink from "./HandDrawnLink";
 
 export default function BiographyPreview() {
   return (
@@ -37,13 +38,13 @@ export default function BiographyPreview() {
                 </p>
               </div>
 
-              <a
-                href="/about"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-brand transition-transform duration-200 hover:translate-x-1"
+              <HandDrawnLink
+                to="/about"
+                ariaLabel="Περισσότερα για το βιογραφικό"
+                className="mt-8"
               >
-                Περισσότερα
-                <span aria-hidden="true">→</span>
-              </a>
+                Δείτε περισσότερα
+              </HandDrawnLink>
             </div>
           </div>
 

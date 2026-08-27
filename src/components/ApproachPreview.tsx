@@ -1,6 +1,5 @@
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router";
 import Container from "./Container";
+import HandDrawnLink from "./HandDrawnLink";
 
 const ApproachPreview = () => {
   return (
@@ -33,14 +32,13 @@ const ApproachPreview = () => {
               </p>
             </div>
 
-            <Link
+            <HandDrawnLink
               to="/approach"
-              aria-label="Περισσότερα για τη θεραπευτική προσέγγιση"
-              className="mt-7 inline-flex items-center gap-2 font-medium text-brand transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+              ariaLabel="Περισσότερα για τη θεραπευτική προσέγγιση"
+              className="mt-8"
             >
-              Περισσότερα
-              <ArrowRight aria-hidden="true" className="h-4 w-4" />
-            </Link>
+              Δείτε περισσότερα
+            </HandDrawnLink>
           </div>
         </div>
       </Container>
