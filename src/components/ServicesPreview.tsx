@@ -68,7 +68,7 @@ const ServicesPreview = () => {
                 </div>
 
                 {/* Description */}
-                <p className="max-w-xs text-base leading-relaxed text-brand/80">
+                <p className="max-w-xs text-base italic leading-relaxed text-brand/80">
                   {service.description}
                 </p>
               </div>
