@@ -1,0 +1,24 @@
+<svg width="920" height="110" viewBox="0 0 920 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="M6 63
+       C72 63 129 63 183 63
+       C221 63 242 58 258 44
+       C280 25 310 18 340 20
+       C379 23 402 42 416 58
+       C429 73 438 83 449 87
+       C461 91 473 85 473 74
+       C473 62 460 56 447 60
+       C433 65 432 80 444 88
+       C456 97 477 96 495 91
+       C524 83 551 75 578 75
+       C614 75 650 76 687 76
+       C721 76 746 81 768 85
+       C791 90 812 91 832 86
+       C857 80 882 79 914 79"
+    stroke="#1D395E"
+    stroke-width="4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    vector-effect="non-scaling-stroke"
+  />
+</svg>
