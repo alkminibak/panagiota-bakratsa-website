@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240" fill="none">
+  <path
+    d="M20 58
+       C150 58 270 58 380 58
+       C430 58 455 48 485 34
+       C510 22 542 18 565 28
+       C586 37 598 55 592 70
+       C586 84 568 90 552 84
+       C536 78 533 63 541 53
+       C548 44 562 44 574 49
+       C594 57 608 76 618 96
+       C632 124 640 154 664 176
+       C685 196 713 202 740 197
+       C754 194 764 188 776 184"
+    stroke="#1D395E"
+    stroke-width="4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    vector-effect="non-scaling-stroke"
+  />
+</svg>
