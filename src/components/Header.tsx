@@ -2,6 +2,7 @@ import { NavLink } from "react-router";
 import logo from "../assets/logo.png";
 import Container from "./Container";
 import NavMarker from "./NavMarker";
+import EspaBadge from "./EspaBadge";
 
 const navItems = [
   {
@@ -22,6 +23,8 @@ const navItems = [
   },
 ];
 
+const SHOW_ESPA_BADGE = false;
+
 const Header = () => {
   const navLinkClasses = ({ isActive }: { isActive: boolean }) =>
     [
@@ -33,7 +36,7 @@ const Header = () => {
   return (
     <header className="border-b-[4px] border-brand bg-background">
       <Container>
-        <div className="flex items-center justify-between py-1">
+        <div className="relative flex items-center justify-between py-1">
           <NavLink
             to="/"
             aria-label="Αρχική - Παναγιώτα Μπακρατσά"
@@ -51,6 +54,12 @@ const Header = () => {
               </span>
             </div>
           </NavLink>
+
+          {SHOW_ESPA_BADGE && (
+            <div className="absolute left-[340px] top-1/2 z-10 -translate-y-1/2">
+              <EspaBadge />
+            </div>
+          )}
 
           <nav aria-label="Κύρια πλοήγηση" className="flex items-center gap-8">
             {navItems.map((item) => (
