@@ -2,6 +2,7 @@ import biographyDetail from "../assets/biography-detail.jpg";
 import cornerContinuous from "../assets/corner.svg";
 import photoToApproachLine from "../assets/photo-to-approach-line.svg";
 import HandDrawnLink from "./HandDrawnLink";
+import AnimatedLine from "./AnimatedLine";
 
 export default function BiographyPreview() {
   return (
@@ -56,10 +57,9 @@ export default function BiographyPreview() {
               className="h-auto w-full object-cover"
             />
 
-            <img
+            <AnimatedLine
               src={photoToApproachLine}
-              alt=""
-              aria-hidden="true"
+              duration={1200}
               className="pointer-events-none absolute -bottom-24 -right-24 z-20 w-[520px] max-w-none"
             />
           </div>

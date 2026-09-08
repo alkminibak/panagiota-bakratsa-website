@@ -4,6 +4,7 @@ import horizontalLoop from "../assets/horizontal-loop.svg";
 import adultIcon from "../assets/adult-icon.png";
 import adolescentIcon from "../assets/adolescent-icon.png";
 import parentsIcon from "../assets/parents-icon.png";
+import AnimatedLine from "./AnimatedLine";
 
 const services = [
   {
@@ -34,10 +35,9 @@ const ServicesPreview = () => {
         <div className="mb-4 flex items-center gap-6 pl-16">
           <h2 className="text-4xl font-medium text-brand">Υπηρεσίες</h2>
 
-          <img
+          <AnimatedLine
             src={horizontalLoop}
-            alt=""
-            aria-hidden="true"
+            duration={1200}
             className="pointer-events-none w-[600px]"
           />
         </div>

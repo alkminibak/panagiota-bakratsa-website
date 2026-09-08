@@ -2,6 +2,7 @@ import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import Container from "./Container";
 import horizontalLoop2 from "../assets/horizontal-loop-2.svg";
+import AnimatedLine from "./AnimatedLine";
 
 const faqs = [
   {
@@ -50,10 +51,10 @@ const Faq = () => {
           {/* Section title */}
           <div className="flex items-center gap-2">
             <div className="relative h-16 min-w-0 flex-1">
-              <img
+              <AnimatedLine
                 src={horizontalLoop2}
-                alt=""
-                aria-hidden="true"
+                duration={1200}
+                reverse
                 className="pointer-events-none absolute left-17 top-1/2 w-[calc(100%-1.5rem)] -translate-y-1/2"
               />
             </div>
