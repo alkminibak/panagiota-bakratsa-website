@@ -1,4 +1,5 @@
 import Container from "../components/Container";
+import AnimatedLine from "../components/AnimatedLine";
 import serviceBullet from "../assets/bullet.svg";
 import servicesTitleAccent from "../assets/services-title.svg";
 import servicesDividerAdults from "../assets/services-divider-adults-alt.svg";
@@ -32,9 +33,10 @@ const Services = () => {
               {/* Decorative flourish
                   Absolute so it does NOT affect title spacing */}
               <div aria-hidden="true" className="relative hidden md:block">
-                <img
+                <AnimatedLine
                   src={servicesTitleAccent}
-                  alt=""
+                  duration={1000}
+                  delay={700}
                   className="pointer-events-none absolute right-0 top-0 w-[110px] max-w-none translate-x-12 -translate-y-2"
                 />
               </div>
@@ -133,9 +135,9 @@ const Services = () => {
 
               {/* Adults → Adolescents divider */}
               <div aria-hidden="true" className="relative my-8 ml-70 h-[75px]">
-                <img
+                <AnimatedLine
                   src={servicesDividerAdults}
-                  alt=""
+                  duration={1300}
                   className="pointer-events-none absolute left-0 top-2 h-auto w-[75%] max-w-none"
                 />
               </div>
@@ -178,9 +180,10 @@ const Services = () => {
 
               {/* Adolescents → Parents divider */}
               <div aria-hidden="true" className="mt-14 mb-4 flex justify-start">
-                <img
+                <AnimatedLine
                   src={servicesDividerAdolescents}
-                  alt=""
+                  duration={1300}
+                  reverse
                   className="pointer-events-none h-auto w-full max-w-[560px]"
                 />
               </div>

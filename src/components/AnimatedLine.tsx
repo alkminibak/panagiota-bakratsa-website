@@ -6,6 +6,7 @@ type AnimatedLineProps = {
   duration?: number;
   threshold?: number;
   reverse?: boolean;
+  delay?: number;
 };
 
 const AnimatedLine = ({
@@ -14,6 +15,7 @@ const AnimatedLine = ({
   duration = 1200,
   threshold = 0.1,
   reverse = false,
+  delay = 0,
 }: AnimatedLineProps) => {
   const containerRef = useRef<HTMLSpanElement>(null);
   const hasAnimatedRef = useRef(false);
@@ -25,7 +27,6 @@ const AnimatedLine = ({
     let cancelled = false;
 
     hasAnimatedRef.current = false;
-    setFailed(false);
 
     fetch(src)
       .then((response) => {
@@ -37,6 +38,7 @@ const AnimatedLine = ({
       })
       .then((svg) => {
         if (!cancelled) {
+          setFailed(false);
           setSvgMarkup(svg);
         }
       })
@@ -60,10 +62,6 @@ const AnimatedLine = ({
 
     if (!svg) return;
 
-    /*
-      Κάνουμε το inline SVG να συμπεριφέρεται
-      όπως το προηγούμενο <img>.
-    */
     svg.style.display = "block";
     svg.style.width = "100%";
     svg.style.height = "auto";
@@ -76,14 +74,7 @@ const AnimatedLine = ({
 
     if (lines.length === 0) return;
 
-    /*
-      Πολύ σημαντικό:
-      αφαιρούμε το non-scaling-stroke μόνο από
-      την inline animated εκδοχή.
-
-      Έτσι το stroke κλιμακώνεται μαζί με το SVG,
-      όπως γινόταν όταν το SVG ήταν <img>.
-    */
+    // Το stroke κλιμακώνεται μαζί με το SVG.
     lines.forEach((line) => {
       line.removeAttribute("vector-effect");
       line.style.vectorEffect = "none";
@@ -107,22 +98,17 @@ const AnimatedLine = ({
 
     const totalLength = lengths.reduce((sum, length) => sum + length, 0);
 
-    /*
-      Αρχική κατάσταση:
-      όλη η γραμμή είναι κρυμμένη.
-    */
+    // Αρχικά η γραμμή είναι κρυμμένη.
     lines.forEach((line, index) => {
       const length = lengths[index];
 
       line.style.strokeDasharray = `${length}`;
       line.style.strokeDashoffset = reverse ? `${-length}` : `${length}`;
+
       line.style.transition = "none";
     });
 
-    /*
-      Αναγκάζουμε τον browser να καταγράψει πρώτα
-      την κρυμμένη κατάσταση πριν ξεκινήσει το animation.
-    */
+    // Καταγράφεται πρώτα η κρυμμένη κατάσταση.
     void container.getBoundingClientRect();
 
     const observer = new IntersectionObserver(
@@ -133,7 +119,7 @@ const AnimatedLine = ({
 
         hasAnimatedRef.current = true;
 
-        let delay = 0;
+        let currentDelay = delay;
 
         lines.forEach((line, index) => {
           const lineDuration =
@@ -141,16 +127,10 @@ const AnimatedLine = ({
               ? duration * (lengths[index] / totalLength)
               : duration / lines.length;
 
-          line.style.transition = `
-            stroke-dashoffset
-            ${lineDuration}ms
-            linear
-            ${delay}ms
-          `;
-
+          line.style.transition = `stroke-dashoffset ${lineDuration}ms linear ${currentDelay}ms`;
           line.style.strokeDashoffset = "0";
 
-          delay += lineDuration;
+          currentDelay += lineDuration;
         });
 
         observer.disconnect();
@@ -166,13 +146,9 @@ const AnimatedLine = ({
     return () => {
       observer.disconnect();
     };
-  }, [svgMarkup, duration, threshold, reverse]);
+  }, [svgMarkup, duration, threshold, reverse, delay]);
 
-  /*
-    Αν για οποιονδήποτε λόγο αποτύχει
-    το inline loading, εμφανίζουμε το SVG
-    όπως πριν, ως κανονικό <img>.
-  */
+  // Fallback αν αποτύχει η φόρτωση του SVG.
   if (failed) {
     return <img src={src} alt="" aria-hidden="true" className={className} />;
   }
