@@ -1,4 +1,5 @@
 import Container from "../components/Container";
+import AnimatedLine from "../components/AnimatedLine";
 import approachDetail from "../assets/approach-detail.jpg";
 import approachFlowLine from "../assets/approach-divider.svg";
 
@@ -38,9 +39,9 @@ const Approach = () => {
 
           {/* Decorative line */}
           <div aria-hidden="true" className="mx-auto my-12 max-w-5xl">
-            <img
+            <AnimatedLine
               src={approachFlowLine}
-              alt=""
+              duration={2000}
               className="pointer-events-none w-full max-w-[900px]"
             />
           </div>
