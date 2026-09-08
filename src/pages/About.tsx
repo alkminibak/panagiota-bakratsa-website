@@ -1,4 +1,5 @@
 import Container from "../components/Container";
+import AnimatedLine from "../components/AnimatedLine";
 import biographyOffice from "../assets/biography-office.jpg";
 import aboutDivider from "../assets/about-divider.svg";
 
@@ -47,9 +48,9 @@ const About = () => {
 
           {/* Decorative divider */}
           <div aria-hidden="true" className="mx-auto -my-4 mb-8 max-w-5xl">
-            <img
+            <AnimatedLine
               src={aboutDivider}
-              alt=""
+              duration={1800}
               className="pointer-events-none w-full max-w-[920px]"
             />
           </div>
