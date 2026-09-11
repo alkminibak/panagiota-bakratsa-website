@@ -18,7 +18,7 @@ const HandDrawnLink = ({
     <Link
       to={to}
       aria-label={ariaLabel}
-      className={`group inline-block w-fit text-base font-medium text-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand ${className}`}
+      className={`group inline-block w-fit text-sm font-medium text-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand md:text-base ${className}`}
     >
       <span className="relative inline-block pb-3">
         <span className="block">{children}</span>
@@ -36,7 +36,7 @@ const HandDrawnLink = ({
             strokeWidth="1.8"
             strokeLinecap="round"
             pathLength="1"
-            className="[stroke-dasharray:1] [stroke-dashoffset:1] transition-[stroke-dashoffset] duration-500 ease-out group-hover:[stroke-dashoffset:0] group-focus-visible:[stroke-dashoffset:0]"
+            className="[stroke-dasharray:1] [stroke-dashoffset:1] transition-[stroke-dashoffset] duration-500 ease-out [@media(hover:none)]:[stroke-dashoffset:0] [@media(hover:hover)]:group-hover:[stroke-dashoffset:0] group-focus-visible:[stroke-dashoffset:0]"
           />
         </svg>
       </span>
