@@ -50,7 +50,7 @@ export default function BiographyPreview() {
           </div>
 
           {/* Image side */}
-          <div className="relative ml-8 mr-auto w-[252px] max-w-[calc(100%_-_2rem)] md:mx-auto md:w-full md:max-w-[340px] lg:ml-0 lg:mr-0 lg:w-[350px] lg:-translate-x-2 xl:w-[380px] xl:-translate-x-4">
+          <div className="relative ml-8 mr-auto w-[252px] max-w-[calc(100%_-_2rem)] md:mx-auto md:w-full md:max-w-[340px] lg:ml-0 lg:mr-0 lg:w-[350px] lg:-translate-x-2 xl:w-[380px] xl:-translate-x-4 xl:max-w-none">
             <img
               src={biographyDetail}
               alt="Λεπτομέρεια από τον χώρο του γραφείου"
