@@ -3,17 +3,17 @@ import HandDrawnLink from "./HandDrawnLink";
 
 const ApproachPreview = () => {
   return (
-    <section className="relative bg-surface pb-10">
+    <section className="relative bg-surface pt-8 pb-10 md:pt-16 lg:pt-10 xl:pt-0">
       <Container>
-        <div className="grid grid-cols-[220px_minmax(0,1fr)] items-start gap-14">
-          <div aria-hidden="true" />
+        <div className="grid grid-cols-1 items-start lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-14">
+          <div aria-hidden="true" className="hidden lg:block" />
 
-          <div className="max-w-4xl">
-            <h2 className="mb-8 text-4xl font-medium text-brand">
+          <div className="max-w-4xl pl-8 md:pl-12 lg:pl-0">
+            <h2 className="mb-6 text-[26px] font-medium text-brand md:mb-8 md:text-[30px] xl:text-4xl">
               Θεραπευτική Προσέγγιση
             </h2>
 
-            <div className="space-y-4 text-lg leading-8 text-text">
+            <div className="space-y-4 text-[15px] leading-[26px] text-text md:text-base md:leading-[30px] xl:text-lg xl:leading-8">
               <p>
                 Η Γνωσιακή Συμπεριφορική Ψυχοθεραπεία αποτελεί μια επιστημονικά
                 τεκμηριωμένη μορφή ψυχοθεραπείας. Η αποτελεσματικότητά της έχει
