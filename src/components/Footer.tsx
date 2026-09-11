@@ -10,9 +10,9 @@ const Footer = () => {
   return (
     <footer className="bg-brand text-on-brand">
       <Container>
-        <div className="grid grid-cols-[1fr_1.25fr_1fr] items-start gap-12 py-5">
+        <div className="grid gap-8 py-8 md:grid-cols-2 xl:grid-cols-[1fr_1.25fr_1fr] xl:items-start xl:gap-12 xl:py-5">
           {/* Brand */}
-          <div className="flex items-center gap-3 pt-9">
+          <div className="flex items-center gap-3 md:col-span-2 xl:col-span-1 xl:pt-9">
             <img src={logoFooter} alt="" className="h-12 w-auto" />
 
             <div>

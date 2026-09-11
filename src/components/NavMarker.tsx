@@ -20,7 +20,7 @@ const NavMarker = ({ isActive = false }: NavMarkerProps) => {
         className={
           isActive
             ? "[stroke-dasharray:1] [stroke-dashoffset:0]"
-            : "[stroke-dasharray:1] [stroke-dashoffset:1] transition-[stroke-dashoffset] duration-[400ms] ease-out group-hover:[stroke-dashoffset:0] group-focus-visible:[stroke-dashoffset:0]"
+            : "[stroke-dasharray:1] [stroke-dashoffset:1] transition-[stroke-dashoffset] duration-[400ms] ease-out [@media(hover:hover)]:group-hover:[stroke-dashoffset:0] group-focus-visible:[stroke-dashoffset:0]"
         }
       />
     </svg>
