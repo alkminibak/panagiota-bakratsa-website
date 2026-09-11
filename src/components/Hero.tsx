@@ -7,18 +7,18 @@ const Hero = () => {
       <img
         src={officeImage}
         alt="Χώρος συνεδριών του ψυχολογικού γραφείου"
-        className="h-[560px] w-full object-cover"
+        className="h-[420px] w-full scale-[1.06] object-cover origin-bottom md:h-[500px] md:scale-100 lg:h-[520px] xl:h-[560px]"
       />
 
       <div className="absolute inset-0">
         <Container>
-          <div className="flex h-[560px] items-center justify-end">
-            <div className="w-full max-w-xl text-right ">
-              <h1 className="text-5xl font-semibold leading-tight text-brand">
+          <div className="flex h-[420px] items-center justify-end md:h-[500px] lg:h-[520px] xl:h-[560px]">
+            <div className="w-full md:max-w-lg md:text-right xl:max-w-xl">
+              <h1 className="sr-only md:not-sr-only md:text-4xl md:font-semibold md:leading-tight md:text-brand xl:text-5xl">
                 Παναγιώτα Μπακρατσά
               </h1>
 
-              <p className="mt-4 text-2xl text-brand">
+              <p className="mt-3 hidden text-xl text-brand md:block xl:mt-4 xl:text-2xl">
                 Ψυχολόγος - Ψυχοθεραπεύτρια
               </p>
             </div>

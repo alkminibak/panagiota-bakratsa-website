@@ -54,14 +54,18 @@ const Header = () => {
             onClick={() => setIsMenuOpen(false)}
             className="flex items-center gap-3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand xl:gap-4"
           >
-            <img src={logo} alt="" className="h-20 w-auto -my-1 xl:h-28" />
+            <img
+              src={logo}
+              alt=""
+              className="h-20 w-auto -mt-1 -mb-3 xl:h-28 xl:-my-1"
+            />
 
             <div className="flex flex-col justify-center gap-1">
-              <span className="text-base font-semibold text-brand xl:text-lg">
+              <span className="text-[17px] font-semibold text-brand xl:text-lg">
                 Παναγιώτα Μπακρατσά
               </span>
 
-              <span className="text-xs text-brand xl:text-sm">
+              <span className="text-[13px] text-brand xl:text-sm">
                 Ψυχολόγος - Ψυχοθεραπεύτρια
               </span>
             </div>
