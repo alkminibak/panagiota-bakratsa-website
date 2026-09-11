@@ -6,24 +6,24 @@ import AnimatedLine from "./AnimatedLine";
 
 export default function BiographyPreview() {
   return (
-    <section className="pt-20 pb-10">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-[1.15fr_0.85fr] items-start gap-12">
+    <section className="pt-10 pb-10 md:pt-14 xl:pt-20">
+      <div className="mx-auto max-w-7xl px-4 md:px-6">
+        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8 xl:gap-12">
           {/* Text side */}
           <div className="relative">
             <img
               src={cornerContinuous}
               alt=""
               aria-hidden="true"
-              className="pointer-events-none absolute -top-12 left-1 w-40"
+              className="pointer-events-none absolute -top-5 left-0 w-28 md:-top-8 md:left-1 md:w-32 xl:-top-12 xl:w-40"
             />
 
-            <div className="max-w-[520px] pl-16 pt-2">
-              <h2 className="mb-8 text-4xl font-medium text-brand">
+            <div className="max-w-[620px] pl-8 pt-2 md:pl-12 lg:max-w-[520px] lg:pl-8 xl:pl-16">
+              <h2 className="mb-6 text-[26px] font-medium text-brand md:mb-8 md:text-[30px] xl:text-4xl">
                 Βιογραφικό
               </h2>
 
-              <div className="space-y-6 text-lg leading-9 text-text">
+              <div className="space-y-5 text-[15px] leading-[26px] text-text md:space-y-6 md:text-base md:leading-[30px] xl:text-lg xl:leading-9">
                 <p>
                   Η Παναγιώτα Μπακρατσά ζει και εργάζεται ως ψυχολόγος στην
                   Καβάλα. Είναι απόφοιτη του Τμήματος Ψυχολογίας του
@@ -50,7 +50,7 @@ export default function BiographyPreview() {
           </div>
 
           {/* Image side */}
-          <div className="relative -translate-x-4 w-[380px]">
+          <div className="relative ml-8 mr-auto w-[252px] max-w-[calc(100%_-_2rem)] md:mx-auto md:w-full md:max-w-[340px] lg:ml-0 lg:mr-0 lg:w-[350px] lg:-translate-x-2 xl:w-[380px] xl:-translate-x-4">
             <img
               src={biographyDetail}
               alt="Λεπτομέρεια από τον χώρο του γραφείου"
@@ -60,7 +60,7 @@ export default function BiographyPreview() {
             <AnimatedLine
               src={photoToApproachLine}
               duration={1200}
-              className="pointer-events-none absolute -bottom-24 -right-24 z-20 w-[520px] max-w-none"
+              className="pointer-events-none absolute -bottom-12 -right-12 z-20 w-[325px] max-w-none md:-bottom-20 md:-right-14 md:w-[390px] lg:-bottom-16 lg:-right-14 lg:w-[440px] xl:-bottom-24 xl:-right-24 xl:w-[520px]"
             />
           </div>
         </div>
