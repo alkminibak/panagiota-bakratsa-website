@@ -45,27 +45,45 @@ const Faq = () => {
   };
 
   return (
-    <section className="bg-background py-20">
+    <section className="bg-background py-12 md:py-14 xl:py-20">
       <Container>
-        <div className="max-w-5xl pl-16">
+        <div className="max-w-5xl pl-8 md:pl-12 xl:pl-16">
           {/* Section title */}
           <div className="flex items-center gap-2">
-            <div className="relative h-16 min-w-0 flex-1">
+            {/* Mobile line */}
+            <div
+              aria-hidden="true"
+              className="relative -ml-3 h-14 min-w-0 flex-1 md:hidden"
+            >
+              <div className="absolute inset-y-0 left-0 right-2 overflow-hidden">
+                <AnimatedLine
+                  src={horizontalLoop2}
+                  duration={1200}
+                  reverse
+                  className="pointer-events-none absolute left-0 top-1/2 w-[400px] max-w-none -translate-y-1/2"
+                />
+              </div>
+            </div>
+
+            {/* Tablet / desktop line */}
+            <div
+              aria-hidden="true"
+              className="relative hidden h-16 min-w-0 flex-1 md:block"
+            >
               <AnimatedLine
                 src={horizontalLoop2}
                 duration={1200}
                 reverse
-                className="pointer-events-none absolute left-17 top-1/2 w-[calc(100%-1.5rem)] -translate-y-1/2"
+                className="pointer-events-none absolute left-17 top-1/2 w-[calc(100%_-_1.5rem)] -translate-y-1/2"
               />
             </div>
 
-            <h2 className="shrink-0 mb-2 text-right text-4xl font-medium text-brand">
+            <h2 className="mb-2 shrink-0 text-right text-[26px] font-medium text-brand md:text-[30px] xl:text-4xl">
               Συχνές Ερωτήσεις
             </h2>
           </div>
-
           {/* FAQ items */}
-          <div className="mt-10">
+          <div className="mt-7 md:mt-8 xl:mt-10">
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
               const answerId = `faq-answer-${index}`;
@@ -78,7 +96,7 @@ const Faq = () => {
                       aria-expanded={isOpen}
                       aria-controls={answerId}
                       onClick={() => handleToggle(index)}
-                      className="flex w-full items-center justify-between gap-6 py-5 text-left text-lg font-medium text-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+                      className="flex w-full items-center justify-between gap-3 py-4 text-left text-[15px] font-medium leading-6 text-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand md:gap-4 md:py-5 md:text-base xl:gap-6 xl:text-lg"
                     >
                       <span>{faq.question}</span>
 
@@ -97,8 +115,11 @@ const Faq = () => {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <div id={answerId} className="pb-7 pr-12">
-                        <p className="max-w-4xl whitespace-pre-line leading-7 text-text">
+                      <div
+                        id={answerId}
+                        className="pb-6 pr-4 md:pb-7 md:pr-8 xl:pr-12"
+                      >
+                        <p className="max-w-4xl whitespace-pre-line text-sm leading-6 text-text md:text-base md:leading-7">
                           {faq.answer}
                         </p>
                       </div>
