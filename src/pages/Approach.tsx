@@ -6,18 +6,18 @@ import approachFlowLine from "../assets/approach-divider.svg";
 const Approach = () => {
   return (
     <main>
-      <section className="bg-background py-20">
+      <section className="bg-background py-12 md:py-14 xl:py-20">
         <Container>
           {/* Page title */}
-          <div className="lg:pl-16">
-            <h1 className="mb-10 text-4xl font-medium text-brand">
+          <div className="mx-auto max-w-5xl pl-8 md:pl-12 xl:mx-0 xl:max-w-none xl:pl-16">
+            <h1 className="mb-6 text-[26px] font-medium text-brand md:mb-8 md:text-[30px] xl:mb-10 xl:text-4xl">
               Θεραπευτική Προσέγγιση
             </h1>
           </div>
 
           {/* Introduction */}
-          <div className="mx-auto max-w-5xl">
-            <div className="max-w-4xl space-y-6 text-lg leading-9 text-text">
+          <div className="mx-auto max-w-5xl pl-8 md:pl-12 xl:pl-0">
+            <div className="max-w-4xl space-y-5 text-[15px] leading-[26px] text-text md:space-y-6 md:text-base md:leading-[30px] xl:text-lg xl:leading-9">
               <p>
                 Η Γνωσιακή Συμπεριφορική Ψυχοθεραπεία αποτελεί μια επιστημονικά
                 τεκμηριωμένη μορφή ψυχοθεραπείας. Η αποτελεσματικότητά της έχει
@@ -38,17 +38,32 @@ const Approach = () => {
           </div>
 
           {/* Decorative line */}
-          <div aria-hidden="true" className="mx-auto my-12 max-w-5xl">
+          <div
+            aria-hidden="true"
+            className="mx-auto mt-6 mb-4 max-w-5xl md:my-10 xl:my-12"
+          >
+            {/* Mobile divider */}
+            <div className="relative h-[70px] w-full overflow-hidden md:hidden">
+              <div className="absolute inset-y-0 left-8 right-6 overflow-hidden">
+                <AnimatedLine
+                  src={approachFlowLine}
+                  duration={2000}
+                  className="pointer-events-none absolute left-1/2 top-1/2 w-[600px] max-w-none -translate-x-1/2 -translate-y-1/2"
+                />
+              </div>
+            </div>
+
+            {/* Tablet / desktop divider */}
             <AnimatedLine
               src={approachFlowLine}
               duration={2000}
-              className="pointer-events-none w-full max-w-[900px]"
+              className="pointer-events-none hidden md:mx-auto md:block md:w-[76%] md:max-w-none lg:w-[88%] xl:mx-0 xl:w-full xl:max-w-[900px]"
             />
           </div>
 
           {/* CBT process */}
-          <div className="mx-auto max-w-5xl">
-            <div className="max-w-4xl text-lg leading-9 text-text">
+          <div className="mx-auto max-w-5xl pl-8 md:pl-12 xl:pl-0">
+            <div className="max-w-4xl text-[15px] leading-[26px] text-text md:text-base md:leading-[30px] xl:text-lg xl:leading-9">
               <p>
                 Η Γνωσιακή Συμπεριφορική Ψυχοθεραπεία βοηθά το άτομο να
                 αναγνωρίζει και να αξιολογεί αυτούς τους τρόπους σκέψης και να
@@ -65,18 +80,18 @@ const Approach = () => {
           </div>
 
           {/* Therapeutic relationship */}
-          <div className="mx-auto mt-16 grid max-w-5xl gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
-            <div className="mx-auto w-full max-w-[320px] lg:mx-0">
+          <div className="mx-auto mt-8 grid max-w-5xl gap-8 pl-8 md:mt-12 md:grid-cols-[0.8fr_1.2fr] md:items-center md:gap-7 md:pl-12 lg:gap-10 xl:mt-16 xl:grid-cols-[0.7fr_1.3fr] xl:gap-12 xl:pl-0">
+            <div className="mr-auto w-[250px] max-w-full md:w-full md:max-w-[230px] lg:max-w-[300px] xl:max-w-[320px]">
               <img
                 src={approachDetail}
                 alt=""
-                className="h-auto w-full"
+                className="h-[300px] w-full object-cover object-center md:h-auto"
                 loading="lazy"
                 decoding="async"
               />
             </div>
 
-            <div className="max-w-[550px] -mt-14 text-lg leading-9 text-text">
+            <div className="max-w-[550px] text-[15px] leading-[26px] text-text md:text-base md:leading-[30px] lg:-mt-30 xl:-mt-14 xl:text-lg xl:leading-9">
               <p>
                 Σημαντικό μέρος της θεραπείας αποτελεί η θεραπευτική σχέση.
                 Θεραπευτής και θεραπευόμενος δουλεύουν συνεργατικά και
