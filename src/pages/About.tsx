@@ -6,17 +6,17 @@ import aboutDivider from "../assets/about-divider.svg";
 const About = () => {
   return (
     <main>
-      <section className="bg-background py-20">
+      <section className="bg-background py-12 md:py-14 xl:py-20">
         <Container>
-          {/* Intro */}
-          <div className="grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+          {/* Top section */}
+          <div className="grid gap-10 md:grid-cols-[minmax(0,1.15fr)_minmax(260px,0.85fr)] md:items-start md:gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-12 xl:gap-14">
             {/* Text */}
-            <div className="lg:pl-16">
-              <h1 className="mb-10 text-4xl font-medium text-brand">
+            <div className="pl-8 md:pl-12 xl:pl-16">
+              <h1 className="mb-6 text-[26px] font-medium text-brand md:mb-8 md:text-[30px] xl:mb-10 xl:text-4xl">
                 Βιογραφικό
               </h1>
 
-              <div className="max-w-2xl space-y-6 text-lg leading-9 text-text">
+              <div className="max-w-2xl space-y-5 text-[15px] leading-[26px] text-text md:space-y-6 md:text-base md:leading-[30px] xl:text-lg xl:leading-9">
                 <p>
                   Η Παναγιώτα Μπακρατσά ζει και εργάζεται ως ψυχολόγος στην
                   Καβάλα. Είναι απόφοιτη του Τμήματος Ψυχολογίας του
@@ -36,28 +36,43 @@ const About = () => {
             </div>
 
             {/* Image */}
-            <div className="mx-auto w-full max-w-[400px] lg:mx-0 lg:justify-self-center lg:mr-10">
+            <div className="mx-auto w-[78%] max-w-[440px] md:mx-0 md:mt-20 md:w-full md:max-w-[330px] md:justify-self-end lg:mt-0 lg:max-w-[360px] xl:max-w-[420px]">
               <img
                 src={biographyOffice}
                 alt="Γωνιά του ιδιωτικού γραφείου με το γραφείο εργασίας και αναρτημένους τίτλους σπουδών"
-                className="h-auto w-full"
+                className="h-[300px] w-full object-cover object-[center_80%] md:h-auto md:object-center"
                 decoding="async"
               />
             </div>
           </div>
 
-          {/* Decorative divider */}
-          <div aria-hidden="true" className="mx-auto -my-4 mb-8 max-w-5xl">
+          {/* Divider */}
+          <div
+            aria-hidden="true"
+            className="mx-auto mt-6 mb-4 max-w-5xl md:mt-8 md:mb-10 xl:-my-4 xl:mb-8"
+          >
+            {/* Mobile divider */}
+            <div className="relative h-[70px] w-full overflow-hidden md:hidden">
+              <div className="absolute inset-y-0 left-8 right-6 overflow-hidden">
+                <AnimatedLine
+                  src={aboutDivider}
+                  duration={1800}
+                  className="pointer-events-none absolute -left-[48px] top-1/2 w-[500px] max-w-none -translate-y-1/2"
+                />
+              </div>
+            </div>
+
+            {/* Tablet / desktop divider */}
             <AnimatedLine
               src={aboutDivider}
               duration={1800}
-              className="pointer-events-none w-full max-w-[920px]"
+              className="pointer-events-none hidden md:block md:w-[74%] md:max-w-none md:mx-auto lg:w-[86%] xl:w-full xl:max-w-[920px]"
             />
           </div>
 
-          {/* Main biography */}
-          <div className="mx-auto max-w-5xl">
-            <div className="max-w-4xl space-y-6 text-lg leading-9 text-text">
+          {/* Bottom text */}
+          <div className="mx-auto max-w-5xl pl-8 md:pl-12 xl:pl-16">
+            <div className="max-w-4xl space-y-5 text-[15px] leading-[26px] text-text md:space-y-6 md:text-base md:leading-[30px] xl:text-lg xl:leading-9">
               <p>
                 Έχει αποκτήσει επαγγελματική και εθελοντική εμπειρία στην Ελλάδα
                 και στο εξωτερικό. Έχει εργαστεί σε διαφορετικά πλαίσια με
@@ -81,9 +96,9 @@ const About = () => {
               </p>
             </div>
 
-            {/* Professional licence */}
-            <div className="mt-12 max-w-4xl border-l-[4px] border-brand pl-6">
-              <p className="text-base leading-7 text-text">
+            {/* Licence */}
+            <div className="mt-10 max-w-4xl border-l-[4px] border-brand pl-4 md:mt-12 md:pl-6">
+              <p className="text-sm leading-6 text-text md:text-base md:leading-7">
                 Κατέχει άδεια ασκήσεως επαγγέλματος ψυχολόγου με
                 Αριθ.Πρωτ.ΔΔΥΚΜ/Μ.Ε.Θ. 853309 (24024).
               </p>
