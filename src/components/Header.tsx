@@ -25,7 +25,7 @@ const navItems = [
   },
 ];
 
-const SHOW_ESPA_BADGE = false;
+const SHOW_ESPA_BADGE = true;
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -77,6 +77,12 @@ const Header = () => {
             </div>
           )}
 
+          {SHOW_ESPA_BADGE && (
+            <div className="absolute right-16 top-1/2 z-10 hidden -translate-y-1/2 md:block lg:hidden">
+              <EspaBadge />
+            </div>
+          )}
+
           {/* Desktop / landscape tablet navigation */}
           <nav
             aria-label="Κύρια πλοήγηση"
@@ -114,6 +120,12 @@ const Header = () => {
             )}
           </button>
         </div>
+
+        {SHOW_ESPA_BADGE && (
+          <div className="flex justify-center pb-2 md:hidden lg:flex lg:justify-end xl:hidden">
+            <EspaBadge />
+          </div>
+        )}
 
         {/* Mobile / portrait tablet navigation */}
         {isMenuOpen && (
