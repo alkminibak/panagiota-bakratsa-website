@@ -25,7 +25,7 @@ const navItems = [
   },
 ];
 
-const SHOW_ESPA_BADGE = true;
+const SHOW_ESPA_BADGE = false;
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
