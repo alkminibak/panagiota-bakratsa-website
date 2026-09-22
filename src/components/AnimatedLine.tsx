@@ -38,8 +38,12 @@ const AnimatedLine = ({
       })
       .then((svg) => {
         if (!cancelled) {
+          const preparedSvg = svg
+            .replace(/\s+vector-effect\s*=\s*["']non-scaling-stroke["']/gi, "")
+            .replace(/vector-effect\s*:\s*non-scaling-stroke\s*;?/gi, "");
+
           setFailed(false);
-          setSvgMarkup(svg);
+          setSvgMarkup(preparedSvg);
         }
       })
       .catch(() => {
