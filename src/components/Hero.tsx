@@ -6,7 +6,7 @@ const Hero = () => {
     <section className="relative overflow-hidden">
       <img
         src={officeImage}
-        alt="Χώρος συνεδριών του ψυχολογικού γραφείου"
+        alt="Χώρος συνεδριών στο γραφείο της ψυχολόγου Παναγιώτας Μπακρατσά"
         className="h-[420px] w-full scale-[1.06] object-cover origin-bottom md:h-[500px] md:scale-100 lg:h-[520px] xl:h-[560px]"
       />
 
